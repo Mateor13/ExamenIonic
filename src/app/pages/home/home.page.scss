@@ -1,0 +1,119 @@
+.chat-content {
+    --padding-bottom: 80px;
+    background: #f4f6fb;
+  }
+  .messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 8px 80px 8px;
+  }
+  .my-message {
+    align-self: flex-end;
+  }
+  .other-message {
+    align-self: flex-start;
+  }
+  .bubble {
+    background: #e0e7ff;
+    color: #222;
+    padding: 10px 16px;
+    border-radius: 18px;
+    max-width: 80vw;
+    box-shadow: 0 2px 8px #0001;
+    position: relative;
+    margin-bottom: 2px;
+    word-break: break-word;
+  }
+  .my-message .bubble {
+    background: #4f8cff;
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .other-message .bubble {
+    background: #e0e7ff;
+    color: #222;
+    border-bottom-left-radius: 4px;
+  }
+  .sender {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+    opacity: 0.7;
+  }
+  .date {
+    font-size: 10px;
+    color: #888;
+    float: right;
+    margin-left: 8px;
+  }
+  .chat-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    gap: 8px;
+    background: #fff;
+    padding: 10px 12px 10px 12px;
+    box-shadow: 0 -2px 8px #0001;
+    z-index: 10;
+    align-items: center;
+  }
+  ion-input {
+    flex: 1 1 auto;
+    --padding-start: 14px;
+    --padding-end: 14px;
+    --background: #f4f6fb;
+    border-radius: 18px;
+    font-size: 1.1em;
+    min-height: 48px;
+    margin-right: 0;
+  }
+  .send-btn {
+  flex: 0 0 auto;
+  font-size: 1.2em;
+  padding: 0 32px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #4f8cff 60%, #007bff 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px #4f8cff33;
+  transition: transform 0.1s;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; // Espacio entre icono y texto
+  span {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 1em;
+    line-height: 1;
+  }
+}
+.send-btn:active {
+  transform: scale(1.08);
+}
+
+.logout-btn {
+  flex: 0 0 auto;
+  font-size: 1.1em;
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #e74c3c 60%, #c0392b 100%);
+  color: #fff !important;
+  font-weight: bold;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+}
+.logout-btn:active {
+  transform: scale(1.08);
+}

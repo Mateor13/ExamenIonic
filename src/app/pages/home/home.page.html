@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="chat-content">
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div class="messages-container">
+    <div *ngFor="let msg of (messages$ | async)"
+      [ngClass]="{'my-message': msg.name === name, 'other-message': msg.name !== name}">
+      <div class="bubble">
+        <span class="sender">{{ msg.name }}</span>
+        <span class="text">{{ msg.message }}</span>
+        <span class="date">{{ msg.created_at | date:'shortTime' }}</span>
+      </div>
+    </div>
+  </div>
+  <form class="chat-form" (ngSubmit)="sendMessage()">
+    <ion-input [(ngModel)]="message" name="message" placeholder="Escribe tu mensaje" required></ion-input>
+    <ion-button type="submit" [disabled]="!message.trim()" class="send-btn">
+      <ion-icon name="send" style="margin-right:6px;"></ion-icon>
+      <span>Enviar</span>
+    </ion-button>
+    <ion-button fill="solid" class="logout-btn" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Salir
+    </ion-button>
+  </form>
+</ion-content>

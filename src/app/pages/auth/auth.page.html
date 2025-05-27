@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding auth-content">
+  <div class="auth-card">
+    <ion-icon name="person-circle-outline" class="auth-icon"></ion-icon>
+    <ion-input 
+      [(ngModel)]="email" 
+      type="email" 
+      placeholder="Correo electrónico"
+      fill="outline"
+      class="auth-input"
+      required>
+    </ion-input>
+    <ion-input 
+      [(ngModel)]="password" 
+      type="password" 
+      placeholder="Contraseña"
+      fill="outline"
+      class="auth-input"
+      required>
+    </ion-input>
+    <ion-button expand="block" (click)="login()" class="auth-btn">Iniciar Sesión</ion-button>
+    <ion-button expand="block" fill="outline" color="secondary" (click)="register()" class="auth-btn">Registrarse</ion-button>
+    <p *ngIf="error" class="auth-error">{{error}}</p>
+  </div>
+</ion-content>
